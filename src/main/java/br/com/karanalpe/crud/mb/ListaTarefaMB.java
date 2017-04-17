@@ -26,10 +26,21 @@ public class ListaTarefaMB implements Serializable{
 	
 	private List<Tarefa> tarefaSelecionadas = new ArrayList<>();
 	
+	private String host;
 	
+	
+	public String getHost() {
+		return host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+	}
+
 	@PostConstruct
 	public void inicializar() {
-		tarefas = tarefaService.listAll();
+		setHost(System.getenv("OPENSHIFT_MYSQL_DB_HOST"));		
+		//tarefas = tarefaService.listAll();
 	}
 	
 	public void excluirSelecionados() {
