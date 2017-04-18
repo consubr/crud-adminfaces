@@ -34,9 +34,7 @@ public class ListaTarefaMB implements Serializable{
 	@PostConstruct
 	public void inicializar() {
 		setDatabase(System.getenv("MYSQL_DATABASE"));
-		setUser(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
-				
-		//tarefas = tarefaService.listAll();
+		setUser(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));		
 	}
 	
 	public void excluirSelecionados() {
