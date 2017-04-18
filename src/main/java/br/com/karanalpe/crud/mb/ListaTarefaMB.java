@@ -26,15 +26,10 @@ public class ListaTarefaMB implements Serializable{
 	
 	private List<Tarefa> tarefaSelecionadas = new ArrayList<>();
 	
-	private String database;
-	private String user;
-	
-	
+		
 
 	@PostConstruct
 	public void inicializar() {
-		setDatabase(System.getenv("MYSQL_DATABASE"));
-		setUser(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
 		tarefas = tarefaService.listAll();
 	}
 	
@@ -63,20 +58,5 @@ public class ListaTarefaMB implements Serializable{
 		this.tarefaSelecionadas = tarefaSelecionadas;
 	}
 
-	public String getDatabase() {
-		return database;
-	}
-
-	public void setDatabase(String database) {
-		this.database = database;
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}	
 
 }
