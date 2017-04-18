@@ -39,7 +39,7 @@ public class ListaTarefaMB implements Serializable{
 
 	@PostConstruct
 	public void inicializar() {
-		setHost(System.getenv("OPENSHIFT_MYSQL_DB_HOST"));		
+		setHost(System.getenv("MYSQL_DATABASE"));		
 		//tarefas = tarefaService.listAll();
 	}
 	
