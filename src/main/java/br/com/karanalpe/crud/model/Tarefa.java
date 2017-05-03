@@ -84,12 +84,12 @@ public class Tarefa implements Serializable{
 		this.edicao = edicao;
 	}
 	
-	public boolean isInclusao() {
+	public boolean isIncluindo() {
 		return getId() == null ? true : false;
 	}
 	
-	public boolean isEdicao() {
-		return !isInclusao();
+	public boolean isEditando() {
+		return !isIncluindo();
 	}
 
 	@Override

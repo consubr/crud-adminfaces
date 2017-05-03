@@ -43,7 +43,9 @@
                          	            value="Novo" styleClass="btn-primary"/>
                     	<p:spacer width="5"/>
 	                    <p:commandButton value="Excluir Selecionado(s)" icon="fa fa-trash" styleClass="btn-danger"
-	                                     action="#{listaTarefaMB.excluirSelecionados()}" process="@form" update="@form"/>
+	                                     action="#{listaTarefaMB.excluirSelecionados()}" 
+	                                     process="@form" update="@form"/>
+	                                     
 	                    <p:spacer width="5"/>
 	                    <p:commandButton value="Olhar Selecionado(s)" 
 	                    				 oncomplete="PF('tarefaSelecionadas').show()"

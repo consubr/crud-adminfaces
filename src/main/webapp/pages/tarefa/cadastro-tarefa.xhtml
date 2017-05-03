@@ -28,12 +28,13 @@
                         <p:spacer width="5"/>
 
                         <p:commandButton value="Excluir" process="@this"
+                        				 rendered="#{cadastroTarefaMB.tarefa.editando}"
                                          icon="fa fa-trash"
                                          action="#{cadastroTarefaMB.excluir()}"
                                          styleClass="btn-danger">
                         </p:commandButton>
                         <p:spacer width="5"/>
-                        <p:commandButton value="Voltar" immediate="true"
+                        <p:commandButton value="Voltar"
                                          action="lista-tarefa?faces-redirect=true"
                                          process="@this"
                                          icon="fa fa-close"/>
@@ -41,13 +42,18 @@
                     </div>
                     
                     <p:splitButton value="Salvar" update="@form"
+                    			   action="#{cadastroTarefaMB.salvar()}"
                                    icon="fa fa-check"
                                    styleClass="hidden-md hidden-lg btn-primary">
                         <p:menuitem value="Excluir"
+                        			action="#{cadastroTarefaMB.excluir()}"
+                        			rendered="#{cadastroTarefaMB.tarefa.editando}"
                                     process="@this"
                                     icon="fa fa-trash"/>
                         <p:separator/>
-                        <p:menuitem value="Voltar" action="lista-tarefa?faces-redirect=true" process="@this"
+                        <p:menuitem value="Voltar"                        			
+                        		    action="lista-tarefa?faces-redirect=true" 
+                        			process="@this"
                                     icon="fa fa-close"/>
                     </p:splitButton>
 

@@ -30,7 +30,7 @@ public class ListaTarefaMB implements Serializable{
 
 	@PostConstruct
 	public void inicializar() {
-		tarefas = tarefaService.listAll();
+		tarefas = tarefaService.listAll();		
 	}
 	
 	public void excluirSelecionados() {
